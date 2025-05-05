@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hambatan Listrik</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f5f7fa;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .hero {
+        background-image: url("https://static.vecteezy.com/system/resources/previews/010/872/103/original/abstract-background-of-futuristic-digital-dark-blue-electronic-circuit-line-vector.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .hero h1 {
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      .simulasi {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .simulasi,
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      .feature-box {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+        background-color: #f8f9fa;
+      }
+      .feature-box:hover {
+        transform: translateY(-5px);
+      }
+      .footer {
+        background: rgb(28, 27, 27);
+        color: #aaa;
+        text-align: center;
+        padding: 1rem 1rem;
+        font-size: 0.8rem;
+        margin-top: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">FISDAS</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Kelompok</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="hitung.html">Hitung</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Selamat Datang Di Website Kelompok Kami</h1>
+    </div>
+
+    <div class="button-container text-center mb-5">
+      <button class="simulasi">
+        <a
+          href="https://bakhri21.github.io/Fisika-Project-Akhir/"
+          target="_blank"
+          >Simulasi</a
+        >
+      </button>
+    </div>
+    <section>
+      <div class="container mt-5">
+        <h2 class="text-center">Tentang Kami</h2>
+        <p class="text-center">
+          Ini adalah halaman utama website kami yang berisi hambatan arus
+          listrik dan kelompok kami.
+        </p>
+      </div>
+    </section>
+
+    <!-- Fitur Utama -->
+    <section class="mt-5">
+      <div class="container">
+        <h2 class="text-center">Fitur Utama</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="feature-box mb-4">
+              <h3>Alat Hitung</h3>
+              <p>
+                Memudahkan penghitung hambatan listrik secara cepat dan tepat.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-box mb-4">
+              <h3>Simulasi Hambatan</h3>
+              <p>
+                Simulasi berbagai jenis hambatan listrik untuk pemahaman lebih
+                baik.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-box mb-4">
+              <h3>Informasi</h3>
+              <p>Informasi yang berisi terdiri dari tentang kelompok kami.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container">
+        <p>&copy;2025 Kelompok Kami. Semua hak cipta dilindungi.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
