@@ -1,61 +1,139 @@
-
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="id" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rumus Hambatan Arus Listrik AC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no" />
+  <title>Kelompok</title>
+  <!-- Bootstrap CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="https://i.pinimg.com/originals/4a/1f/51/4a1f510ad52900fb27726aaf408707f3.jpg" type="image/x-icon" />
+  <meta name="description" content="Website untuk menghitung hambatan listrik" />
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f5f7fa;
-      padding: 0px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      margin: 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
-
-    .content-container {
-      max-width: 600px;
-      width: 100%;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      margin-top: 20px;
-      margin-bottom: 20px;
+    
+    /* Dark mode styles */
+    [data-bs-theme="dark"] body {
+      background: #121212;
+      color: #f5f5f5;
     }
-
-    h1 {
-      margin-bottom: 25px;
+    
+    [data-bs-theme="dark"] .member-card {
+      background: #2d2d2d;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    
+    [data-bs-theme="dark"] .member-name {
+      color: #e0e0e0;
+    }
+    
+    [data-bs-theme="dark"] .member-role {
+      color: #b0b0b0;
+    }
+    
+    header {
+      color: white;
+    }
+    header h1 {
       font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+    .members-section {
+      flex-grow: 1;
+      padding: 3rem 1rem 3rem;
+      max-width: 960px;
+      margin: auto;
+      width: 100%;
+    }
+    .member-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
       text-align: center;
-      color: rgb(28, 27, 27);
     }
+    .member-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    }
+    .member-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 5px solid rgb(28, 27, 27);
+      background-color: #e1eaff;
+    }
+    .member-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+    .member-role {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 0.25rem;
+      transition: color 0.3s ease;
+    }
+    footer {
+      background: rgb(28, 27, 27);
+      color: #aaa;
+      text-align: center;
+      padding: 0.5rem 0.5rem;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    
+    /* Theme toggle button */
+    .theme-toggle-btn {
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+.content-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  background-color: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    #result {
-      margin-top: 25px;
-      padding: 15px;
-      background-color: #e9f0ff;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      white-space: pre-line;
-      color: rgb(28, 27, 27);
-      min-height: 60px;
-    }
+/* Tambahkan dukungan untuk dark mode */
+[data-bs-theme="dark"] .content-container {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
+}
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
     <div class="container">
-      <a class="navbar-brand" href="#">FISDAS</a>
+      <a class="navbar-brand" href="index.html">FISDAS</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -71,6 +149,17 @@
             <a class="nav-link" href="hitung.html">Hitung</a>
           </li>
         </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+              <button id="theme-toggle" class="btn text-light theme-toggle-btn">
+                  <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun-fill" viewBox="0 0 16 16">
+                      <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                  </svg>
+                  <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-fill d-none" viewBox="0 0 16 16">
+                      <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                  </svg>
+                  <span id="theme-text">Dark Mode</span>
+              </button>
       </div>
     </div>
   </nav>
@@ -372,6 +461,45 @@
     }
 
     form.addEventListener('submit', calculate);
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+      const themeText = document.getElementById('theme-text');
+      const htmlElement = document.documentElement;
+      
+      // Check for saved theme preference or use default
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      htmlElement.setAttribute('data-bs-theme', savedTheme);
+      
+      // Update button appearance based on current theme
+      updateThemeButton(savedTheme);
+      
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function() {
+        const currentTheme = htmlElement.getAttribute('data-bs-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        htmlElement.setAttribute('data-bs-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        
+        updateThemeButton(newTheme);
+      });
+      
+      // Function to update button text and icon
+      function updateThemeButton(theme) {
+        if (theme === 'light') {
+          sunIcon.classList.add('d-none');
+          moonIcon.classList.remove('d-none');
+          themeText.textContent = 'Dark Mode';
+        } else {
+          sunIcon.classList.remove('d-none');
+          moonIcon.classList.add('d-none');
+          themeText.textContent = 'Light Mode';
+        }
+      }
+    });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
